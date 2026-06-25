@@ -1,0 +1,109 @@
+.hero-section {
+  padding: 8rem 2rem 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 60vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(18, 18, 18, 0) 70%);
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.hero-content {
+  max-width: 800px;
+  animation: fadeIn 1s ease-out;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold-primary), var(--gold-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  margin-bottom: 3rem;
+  opacity: 0.9;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  padding: 0.8rem 2rem;
+  border-radius: var(--radius-full);
+}
+
+.btn-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.secondary-btn {
+  background-color: transparent;
+  color: var(--text-light);
+  border-color: var(--text-muted);
+}
+.secondary-btn:hover {
+  border-color: var(--gold-primary);
+  color: var(--gold-primary);
+  background-color: rgba(212, 175, 55, 0.1);
+}
+
+.secondary-btn.outline {
+  border-style: dashed;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  .hero-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
